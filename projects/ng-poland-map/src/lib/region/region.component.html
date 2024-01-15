@@ -1,0 +1,9 @@
+<svg:path
+  [attr.d]="path"
+  [attr.fill]="highlightColor"
+  [attr.stroke]="strokeColor"
+  [ngStyle]="{ 'stroke-width': strokeWidth }"
+></svg:path>
+<svg:text [attr.x]="labelPosX" [attr.y]="labelPosY" [attr.fill]="labelColor">
+  {{ labelText }}
+</svg:text>

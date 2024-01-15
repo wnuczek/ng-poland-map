@@ -1,0 +1,296 @@
+<div class="map-cnt">
+  <svg id="svg" viewBox="0 0 565 533" style="fill: #eeeeee">
+    <g
+      lib-ng-poland-map-region
+      *ngFor="let region of regions"
+      [path]="region.path"
+      [highlightColor]="
+        region.voivodeship ? regionFillColor(region.voivodeship) : undefined
+      "
+      [labelPosX]="region.labelPosX"
+      [labelPosY]="region.labelPosY"
+    ></g>
+
+    <g
+      id="g3953"
+      transform="matrix(0.70493641,0,0,0.70493641,218.58992,-80.332829)"
+    >
+      <path
+        d="m -77.26823,427.34074 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['poznań'])"
+        id="city-poznan"
+        [attr.fill]="cityPinColor(cities['poznań'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m -190.54274,479.53692 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['zielona góra'])"
+        id="city-zielona-gora"
+        [attr.fill]="cityPinColor(cities['zielona góra'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m -71.22217,598.09242 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['wrocław'])"
+        id="city-wroclaw"
+        [attr.fill]="cityPinColor(cities['wrocław'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 6.0545,650.72188 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['opole'])"
+        id="city-opole"
+        [attr.fill]="cityPinColor(cities['opole'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 89.73871,709.64249 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['katowice'])"
+        id="city-katowice"
+        [attr.fill]="cityPinColor(cities['katowice'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 167.87524,737.93623 a 9.091375,9.091375 0 0 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['kraków'])"
+        id="city-krakow"
+        [attr.fill]="cityPinColor(cities['kraków'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+        inkscape:connector-curvature="0"
+      />
+      <path
+        d="m 212.57377,645.30962 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['kielce'])"
+        id="city-kielce"
+        [attr.fill]="cityPinColor(cities['kielce'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 122.37433,521.32083 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['łódź'])"
+        id="city-lodz"
+        [attr.fill]="cityPinColor(cities['łódź'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m -252.89734,294.54158 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['szczecin'])"
+        id="city-szczecin"
+        [attr.fill]="cityPinColor(cities['szczecin'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 13.78293,350.60505 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['bydgoszcz'])"
+        id="city-bydgoszcz"
+        [attr.fill]="cityPinColor(cities['bydgoszcz'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 60.75502,363.23196 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['toruń'])"
+        id="city-torun"
+        [attr.fill]="cityPinColor(cities['toruń'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 423.90486,346.56444 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['białystok'])"
+        id="city-bialystok"
+        [attr.fill]="cityPinColor(cities['białystok'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 207.73222,266.25731 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['olsztyn'])"
+        id="city-olsztyn"
+        [attr.fill]="cityPinColor(cities['olsztyn'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 60.75502,189.48572 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['gdańsk'])"
+        id="city-gdansk"
+        [attr.fill]="cityPinColor(cities['gdańsk'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 371.75963,590.15777 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['lublin'])"
+        id="city-lublin"
+        [attr.fill]="cityPinColor(cities['lublin'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m 323.90249,744.44348 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['rzeszów'])"
+        id="city-rzeszow"
+        [attr.fill]="cityPinColor(cities['rzeszów'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <rect
+        width="18.056477"
+        height="18.056477"
+        rx="1.1699139"
+        ry="1.0054665"
+        x="231.59705"
+        y="456.29227"
+        id="city-warszawa"
+        *ngIf="showCityPin(cities['warszawa'])"
+        [attr.fill]="cityPinColor(cities['warszawa'])"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+      <path
+        d="m -209.04274,390.03692 a 9.091375,9.091375 0 1 1 -18.18275,0 9.091375,9.091375 0 1 1 18.18275,0 z"
+        *ngIf="showCityPin(cities['gorzów wielkopolski'])"
+        [attr.fill]="cityPinColor(cities['gorzów wielkopolski'])"
+        id="city-gorzow-wlkp"
+        style="
+          display: inline;
+          fill-opacity: 1;
+          stroke: #000000;
+          stroke-width: 0;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
+          stroke-opacity: 1;
+        "
+      />
+    </g>
+  </svg>
+</div>

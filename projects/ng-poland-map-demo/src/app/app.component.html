@@ -1,0 +1,12 @@
+<h1>ng-poland-map</h1>
+<main>
+  <form>
+    <label for="voivodeships">Highlighted voivodeships:</label>
+    <select name="voivodeships" id="voivodeships" multiple (change)="onSelectionChange($event)">
+      <option *ngFor="let voivodeship of voivodeships" [value]="voivodeship">
+        {{ voivodeship }}
+      </option>
+    </select>
+  </form>
+  <lib-ng-poland-map [highlighted]="selectedVoivodeships"></lib-ng-poland-map>
+</main>
