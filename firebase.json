@@ -1,0 +1,20 @@
+{
+  "hosting": {
+		"site": "ng-poland-map",
+    "public": "./dist/ng-poland-map-demo/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+		"rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "frameworksBackend": {
+      "region": "europe-west1"
+    }
+  }
+}

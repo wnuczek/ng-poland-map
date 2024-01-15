@@ -23,7 +23,7 @@ const southToNorth = southLat - northLat;
 const eastToWest = eastLong - westLong;
 
 @Component({
-  selector: 'lib-ng-poland-map',
+  selector: 'ng-poland-map',
   standalone: true,
   imports: [
     CommonModule,

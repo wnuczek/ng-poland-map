@@ -1,24 +1,14 @@
 # NgPolandMap
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+ng-poland-map component displays svg map of Poland with highlightable voivodeship outlines.
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name --project ng-poland-map` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-poland-map`.
-> Note: Don't forget to add `--project ng-poland-map` or else it will be added to the default project in your `angular.json` file. 
+Install `ng-poland-map` in your project with: `npm i ng-poland-map`
 
-## Build
 
-Run `ng build ng-poland-map` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Publishing
 
-After building your library with `ng build ng-poland-map`, go to the dist folder `cd dist/ng-poland-map` and run `npm publish`.
+## Demo
 
-## Running unit tests
-
-Run `ng test ng-poland-map` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[https://ng-poland-map.web.app](https://ng-poland-map.web.app)
