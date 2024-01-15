@@ -18,8 +18,8 @@ export class NgPolandMapRegionComponent {
   @Input() pointColor: string = '#f93324';
   @Input() labelText: string | undefined;
   @Input() labelColor: string = '#000000';
-  @Input() labelPosX: string | undefined;
-  @Input() labelPosY: string | undefined;
+  @Input() labelPosX: number | undefined;
+  @Input() labelPosY: number | undefined;
   @Input() labelFont: string | undefined;
   @Input() labelFontSize: string | undefined;
 }

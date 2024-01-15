@@ -2,7 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { NgPolandMapComponent, Voivodeship } from 'ng-poland-map';
+import {
+  NgPolandMapComponent,
+  NgPolandMapPoint,
+  NgPolandMapRegion,
+  Voivodeship,
+  cityList,
+  regionList,
+} from 'ng-poland-map';
 
 @Component({
   selector: 'app-root',
@@ -14,19 +21,39 @@ import { NgPolandMapComponent, Voivodeship } from 'ng-poland-map';
 export class AppComponent {
   title = 'ng-poland-map-demo';
 
-  voivodeships = Object.keys(Voivodeship);
+  voivodeships = regionList;
+  cities = cityList;
 
-  selectedVoivodeships: Voivodeship[] = [];
+  selectedVoivodeships: NgPolandMapRegion[] = [];
+  selectedCites: NgPolandMapPoint[] = [];
 
-  onSelectionChange($event: any) {
+  onRegionSelectionChange($event: any) {
     const options = $event.target.options;
+
     this.selectedVoivodeships = [];
+
     Array.from(options).map((option: any) => {
       if (option.selected) {
-        const value = option.value as keyof typeof Voivodeship;
-        this.selectedVoivodeships.push(Voivodeship[value]);
+        const value = option.value as Voivodeship;
+        const selected = this.voivodeships.filter(
+          (v) => v.voivodeship == value
+        )[0];
+        this.selectedVoivodeships.push(selected);
       }
     });
-    console.log(this.selectedVoivodeships);
+  }
+
+  onCitySelectionChange($event: any) {
+    const options = $event.target.options;
+
+    this.selectedCites = [];
+
+    Array.from(options).map((option: any) => {
+      if (option.selected) {
+        const value = option.value;
+        const selected = this.cities.filter((v) => v.labelText == value)[0];
+        this.selectedCites.push(selected);
+      }
+    });
   }
 }

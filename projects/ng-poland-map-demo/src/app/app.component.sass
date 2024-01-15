@@ -4,16 +4,23 @@ main
 	display: flex
 	flex-direction: column
 	gap: 20px
+	justify-content: center
+	align-items: center
 	@media screen and (min-width: 768px)
 		flex-direction: row
 		height: 90vh
 		max-width: 1200px
 		margin: 0 auto
+	.forms-container
+		width: 30%
+		height: 100%
+
 	form
 		display: flex
 		flex-direction: column
 		width: 30%
+		height: 50%
 		select
-			height: 50%
+			flex:1
 	lib-ng-poland-map
 		flex: 1
