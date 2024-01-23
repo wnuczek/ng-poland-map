@@ -1,4 +1,8 @@
-<svg id="ng-poland-map" viewBox="0 0 565 533">
+<svg
+  id="ng-poland-map"
+  viewBox="0 0 565 533"
+  [ngStyle]="{ 'background-color': bgColor }"
+>
   <g
     lib-ng-poland-map-region
     *ngFor="let region of regions"
@@ -8,12 +12,17 @@
     "
     [labelPosX]="region.labelPosX"
     [labelPosY]="region.labelPosY"
+    [strokeColor]="strokeColor"
+    [strokeWidth]="strokeWidth"
   ></g>
 
   <g
     lib-ng-poland-map-pointer
     *ngFor="let city of highlightedCities"
-    [x]="longitudeToSvgX(city.longitude)"
-    [y]="latitudeToSvgY(city.latitude)"
+    [longitude]="city.longitude"
+    [latitude]="city.latitude"
+    [fill]="pointColor"
+		[pointSize]="pointSize"
+		[pointerTemplate]="pointerTemplate"
   ></g>
 </svg>

@@ -1,3 +1,34 @@
+export type NgPolandMapConfig = {
+  // map
+  bgColor?: string;
+  regionColor?: string;
+  strokeColor?: string;
+  strokeWidth?: number;
+  highlightColor?: string;
+  // pointer
+  pointColor?: string;
+  pointSize?: number;
+};
+
+export const defaultConfig = {
+  bgColor: '#ffffff',
+  regionColor: '#aaaaaa',
+  strokeColor: '#dddddd',
+  strokeWidth: 2,
+  highlightColor: '#9fc874',
+  pointColor: '#f93324',
+  pointSize: 10,
+};
+
+export const northLat = 54.833333;
+export const northLong = 18.066667;
+export const southLat = 49;
+export const southLong = 22.85;
+export const eastLat = 52.85;
+export const eastLong = 14.116667;
+export const westLat = 50.866667;
+export const westLong = 24.15;
+
 export type NgPolandMapPoint = {
   latitude: number;
   longitude: number;

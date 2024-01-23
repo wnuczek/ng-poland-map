@@ -1,14 +1,52 @@
 # NgPolandMap
 
-ng-poland-map component displays svg map of Poland with highlightable voivodeship outlines.
+ng-poland-map is Angular standalone component that displays svg map of Poland with highlightable voivodeship outlines.
 
 ## Usage
 
-Install `ng-poland-map` in your project with: `npm i ng-poland-map`
+Install `ng-poland-map` in your project with: `npm i ng-poland-map`.
 
+Use it inside your Angular app with `<ng-poland-map>` selector.
 
+### Input data
 
+```typescript
+import { NgPolandMapPoint, NgPolandMapRegion, cityList, regionList } from "ng-poland-map";
+
+const selectedRegions: NgPolandMapRegion[] = [...regionList]; // provide your own list based on regionList
+const selectedCities: NgPolandMapCity[] = [...cityList]; // provide your own list based on cityList
+```
+
+### Config
+
+Config object can be created using `NgPolandMapConfig` type.
+
+```typescript
+import { NgPolandMapConfig } from "ng-poland-map";
+
+const config: NgPolandMapConfig = {
+  // your config goes here
+};
+```
+
+Then use it inside template.
+
+```html
+<ng-poland-map 
+  [highlightedRegions]="selectedRegions" 
+  [highlightedCities]="selectedCites" 
+  [bgColor]="config.bgColor" 
+  [strokeColor]="config.strokeColor" 
+  [strokeWidth]="config.strokeWidth" 
+  [regionColor]="config.regionColor" 
+  [highlightColor]="config.highlightColor" 
+  [pointColor]="config.pointColor" 
+  [pointSize]="config.pointSize" 
+></ng-poland-map>
+```
 
 ## Demo
 
-[https://ng-poland-map.web.app](https://ng-poland-map.web.app)
+Live demo is available at [https://ng-poland-map.web.app](https://ng-poland-map.web.app).
+
+You can view demo source here at [github](https://github.com/wnuczek/ng-poland-map/tree/master/projects/ng-poland-map-demo)

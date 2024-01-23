@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 import {
@@ -8,15 +9,21 @@ import {
   NgPolandMapRegion,
   Voivodeship,
   cityList,
+  defaultConfig,
+  eastLong,
+  northLat,
   regionList,
+  southLat,
+  westLong,
 } from 'ng-poland-map';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NgPolandMapComponent],
+  imports: [CommonModule, RouterOutlet, NgPolandMapComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   title = 'ng-poland-map-demo';
@@ -26,6 +33,22 @@ export class AppComponent {
 
   selectedVoivodeships: NgPolandMapRegion[] = [];
   selectedCites: NgPolandMapPoint[] = [];
+
+  customLatitude: number | undefined = 52.1053;
+  customLongitude: number | undefined = 21.2616;
+
+  bgColor: string = defaultConfig.bgColor;
+  strokeColor: string = defaultConfig.strokeColor;
+  strokeWidth: number = defaultConfig.strokeWidth;
+  regionColor: string = defaultConfig.regionColor;
+  highlightColor: string = defaultConfig.highlightColor;
+  pointColor: string = defaultConfig.pointColor;
+  pointSize: number = defaultConfig.pointSize;
+
+  minLongitude = eastLong;
+  maxLongitude = westLong;
+  minLatitude = southLat;
+  maxLatitude = northLat;
 
   onRegionSelectionChange($event: any) {
     const options = $event.target.options;
@@ -55,5 +78,17 @@ export class AppComponent {
         this.selectedCites.push(selected);
       }
     });
+  }
+
+  addPointer() {
+    if (this.customLongitude && this.customLatitude) {
+      const newCity: NgPolandMapPoint = {
+        longitude: this.customLongitude,
+        latitude: this.customLatitude,
+        labelText: `Point ${this.cities.length + 1}`,
+      };
+      this.cities.push(newCity);
+      this.selectedCites.push(newCity);
+    }
   }
 }

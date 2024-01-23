@@ -1,4 +1,5 @@
 import { Component, Input, NO_ERRORS_SCHEMA } from '@angular/core';
+import { defaultConfig } from '../config';
 
 @Component({
   selector: 'g[lib-ng-poland-map-region]',
@@ -10,12 +11,12 @@ import { Component, Input, NO_ERRORS_SCHEMA } from '@angular/core';
 })
 export class NgPolandMapRegionComponent {
   @Input() path: string | undefined;
-  @Input() bgColor: string = '#eeeeee';
-  @Input() strokeWidth: number = 2;
-  @Input() strokeColor: string = '#ffffff';
+  @Input() bgColor: string = defaultConfig.regionColor;
+  @Input() strokeWidth: number = defaultConfig.strokeWidth;
+  @Input() strokeColor: string = defaultConfig.strokeColor;
 
   @Input() highlightColor: string | undefined = this.bgColor;
-  @Input() pointColor: string = '#f93324';
+
   @Input() labelText: string | undefined;
   @Input() labelColor: string = '#000000';
   @Input() labelPosX: number | undefined;

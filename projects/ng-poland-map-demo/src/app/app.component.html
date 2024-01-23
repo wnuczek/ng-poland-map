@@ -1,41 +1,138 @@
 <h1>ng-poland-map</h1>
 <main>
-	<div class="forms-container">
-  <form>
-    <label for="voivodeships">Highlighted voivodeships:</label>
-    <select
-      name="voivodeships"
-      id="voivodeships"
-      multiple
-      (change)="onRegionSelectionChange($event)"
-    >
-      <option
-        *ngFor="let voivodeship of voivodeships"
-        [value]="voivodeship.voivodeship"
+  <div class="forms-container">
+    <form class="config-form">
+			<div class="form-row">
+        <label for="background-color">Background color:</label>
+        <input
+          name="background-color"
+          id="background-color"
+          type="color"
+          value="#333333"
+          [(ngModel)]="bgColor"
+        />
+      </div>
+			<div class="form-row">
+        <label for="region-color">Region color:</label>
+        <input
+          name="region-color"
+          id="region-color"
+          type="color"
+          [(ngModel)]="regionColor"
+        />
+      </div>
+      <div class="form-row">
+        <label for="highlight-color">Highlight color:</label>
+        <input
+          name="highlight-color"
+          id="highlight-color"
+          type="color"
+          [(ngModel)]="highlightColor"
+        />
+      </div>
+
+      <div class="form-row">
+        <label for="point-color">Point color:</label>
+        <input
+          name="point-color"
+          id="point-color"
+          type="color"
+          [(ngModel)]="pointColor"
+        />
+      </div>
+      <div class="form-row">
+        <label for="point-size">Point size:</label>
+        <input
+          name="point-size"
+          id="point-size"
+          type="number"
+          [(ngModel)]="pointSize"
+        />
+      </div>
+      <div class="form-row">
+        <label for="stroke-color">Stroke color:</label>
+        <input
+          name="stroke-color"
+          id="stroke-color"
+          type="color"
+          [(ngModel)]="strokeColor"
+        />
+      </div>
+      <div class="form-row">
+        <label for="stroke-width">Stroke width:</label>
+        <input
+          name="stroke-width"
+          id="stroke-width"
+          type="number"
+          [(ngModel)]="strokeWidth"
+        />
+      </div>
+    </form>
+    <form class="data-form">
+      <label for="voivodeships">Highlighted voivodeships:</label>
+      <select
+        name="voivodeships"
+        id="voivodeships"
+        multiple
+        (change)="onRegionSelectionChange($event)"
       >
-        {{ voivodeship.voivodeship }}
-      </option>
-    </select>
-  </form>
-	<form>
-    <label for="cities">Highlighted cities:</label>
-    <select
-      name="cities"
-      id="cities"
-      multiple
-      (change)="onCitySelectionChange($event)"
-    >
-      <option
-        *ngFor="let city of cities"
-        [value]="city.labelText"
+        <option
+          *ngFor="let voivodeship of voivodeships"
+          [value]="voivodeship.voivodeship"
+        >
+          {{ voivodeship.voivodeship }}
+        </option>
+      </select>
+    </form>
+    <form class="data-form">
+      <label for="cities">Highlighted cities:</label>
+      <select
+        name="cities"
+        id="cities"
+        multiple
+        (change)="onCitySelectionChange($event)"
       >
-        {{ city.labelText }}
-      </option>
-    </select>
-  </form>
-	</div>
+        <option *ngFor="let city of cities" [value]="city.labelText">
+          {{ city.labelText }}
+        </option>
+      </select>
+    </form>
+    <form class="data-form">
+			<label for="coordinatesLong">Custom coordinates:</label>
+      <div class="form-row">
+        <input
+          name="coordinatesLat"
+          id="coordinatesLat"
+          type="number"
+					placeholder="Latitude"
+          [min]="minLatitude"
+          [max]="maxLatitude"
+          [(ngModel)]="customLatitude"
+        />
+        <input
+          name="coordinatesLong"
+          id="coordinatesLong"
+          type="number"
+					placeholder="Longitude"
+          [min]="minLongitude"
+          [max]="maxLongitude"
+          [(ngModel)]="customLongitude"
+        />
+        <button (click)="addPointer()">Add pointer</button>
+      </div>
+    </form>
+  </div>
   <ng-poland-map
     [highlightedRegions]="selectedVoivodeships"
     [highlightedCities]="selectedCites"
+    [bgColor]="bgColor"
+    [strokeColor]="strokeColor"
+    [strokeWidth]="strokeWidth"
+    [regionColor]="regionColor"
+    [highlightColor]="highlightColor"
+    [pointColor]="pointColor"
+    [pointSize]="pointSize"
   ></ng-poland-map>
 </main>
+
+

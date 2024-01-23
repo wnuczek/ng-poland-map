@@ -1,8 +1,17 @@
-<svg:circle
-  [attr.cx]="x"
-  [attr.cy]="y"
-  r="5"
-  stroke="black"
-  stroke-width="2"
-  fill="red"
-/>
+<ng-container *ngIf="longitude && latitude">
+  <ng-container
+    *ngTemplateOutlet="
+      pointerTemplate || defaultPointer;
+      context: { x: longitudeToSvgX(longitude), y: latitudeToSvgY(latitude) }
+    "
+  ></ng-container>
+</ng-container>
+
+<ng-template #defaultPointer let-x="x" let-y="y">
+  <svg:circle
+    [attr.cx]="x"
+    [attr.cy]="y"
+    [attr.r]="pointSize"
+    [attr.fill]="fill"
+  />
+</ng-template>
