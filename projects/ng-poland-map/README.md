@@ -8,6 +8,20 @@ Install `ng-poland-map` in your project with: `npm i ng-poland-map`.
 
 Use it inside your Angular app with `<ng-poland-map>` selector.
 
+### Import component
+
+```typescript
+import { NgPolandMapComponent } from 'ng-poland-map';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [ NgPolandMapComponent ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.sass',
+})
+```
+
 ### Input data
 
 ```typescript
