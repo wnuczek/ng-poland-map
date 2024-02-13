@@ -1,13 +1,14 @@
 {
   "name": "ng-poland-map",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build ng-poland-map",
+    "build-demo": "ng build ng-poland-map-demo",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-		"publish": "ng build && cd dist/ng-poland-map && npm publish"
+		"publish": "ng build ng-poland-map && cd dist/ng-poland-map && npm publish"
   },
   "private": true,
   "dependencies": {
