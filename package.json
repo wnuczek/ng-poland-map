@@ -8,7 +8,7 @@
     "build-demo": "ng build ng-poland-map-demo",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-		"publish": "ng build ng-poland-map && cd dist/ng-poland-map && npm publish"
+    "publish": "ng build ng-poland-map && cd dist/ng-poland-map && npm publish"
   },
   "private": true,
   "dependencies": {
@@ -37,7 +37,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^17.0.0",
-		"ng-poland-map": "file:dist/ng-poland-map",
+    "ng-poland-map": "file:dist/ng-poland-map",
     "typescript": "~5.2.2"
   }
 }
