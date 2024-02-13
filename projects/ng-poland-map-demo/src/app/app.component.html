@@ -2,7 +2,7 @@
 <main>
   <div class="forms-container">
     <form class="config-form">
-			<div class="form-row">
+      <div class="form-row">
         <label for="background-color">Background color:</label>
         <input
           name="background-color"
@@ -12,7 +12,7 @@
           [(ngModel)]="bgColor"
         />
       </div>
-			<div class="form-row">
+      <div class="form-row">
         <label for="region-color">Region color:</label>
         <input
           name="region-color"
@@ -67,6 +67,24 @@
           [(ngModel)]="strokeWidth"
         />
       </div>
+      <div class="form-row">
+        <label for="regions-clickable">Regions clickable:</label>
+        <input
+          name="regions-clickable"
+          id="regions-clickable"
+          type="checkbox"
+          [(ngModel)]="regionsClickable"
+        />
+      </div>
+      <div class="form-row">
+        <label for="pointers-clickable">Pointers clickable:</label>
+        <input
+          name="pointers-clickable"
+          id="pointers-clickable"
+          type="checkbox"
+          [(ngModel)]="pointersClickable"
+        />
+      </div>
     </form>
     <form class="data-form">
       <label for="voivodeships">Highlighted voivodeships:</label>
@@ -98,24 +116,26 @@
       </select>
     </form>
     <form class="data-form">
-			<label for="coordinatesLong">Custom coordinates:</label>
+      <label for="coordinatesLong">Custom coordinates:</label>
       <div class="form-row">
         <input
           name="coordinatesLat"
           id="coordinatesLat"
           type="number"
-					placeholder="Latitude"
+          placeholder="Latitude"
           [min]="minLatitude"
           [max]="maxLatitude"
+					step="0.05"
           [(ngModel)]="customLatitude"
         />
         <input
           name="coordinatesLong"
           id="coordinatesLong"
           type="number"
-					placeholder="Longitude"
+          placeholder="Longitude"
           [min]="minLongitude"
           [max]="maxLongitude"
+					step="0.05"
           [(ngModel)]="customLongitude"
         />
         <button (click)="addPointer()">Add pointer</button>
@@ -132,7 +152,9 @@
     [highlightColor]="highlightColor"
     [pointColor]="pointColor"
     [pointSize]="pointSize"
+    [regionsClickable]="regionsClickable"
+    (regionClicked)="onRegionClicked($event)"
+    [pointersClickable]="pointersClickable"
+    (pointClicked)="onPointerClicked($event)"
   ></ng-poland-map>
 </main>
-
-

@@ -1,17 +1,16 @@
-<ng-container *ngIf="longitude && latitude">
+<ng-container *ngIf="point">
   <ng-container
-    *ngTemplateOutlet="
-      pointerTemplate || defaultPointer;
-      context: { x: longitudeToSvgX(longitude), y: latitudeToSvgY(latitude) }
-    "
+    *ngTemplateOutlet="pointerTemplate || defaultPointer; context: { point }"
   ></ng-container>
 </ng-container>
 
-<ng-template #defaultPointer let-x="x" let-y="y">
+<ng-template #defaultPointer let-point="point">
   <svg:circle
-    [attr.cx]="x"
-    [attr.cy]="y"
+    [attr.cx]="longitudeToSvgX(point.longitude)"
+    [attr.cy]="latitudeToSvgY(point.latitude)"
     [attr.r]="pointSize"
     [attr.fill]="fill"
+    (click)="pointClicked(point)"
+    [attr.class]="clickable ? 'pointer clickable' : 'pointer'"
   />
 </ng-template>
