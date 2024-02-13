@@ -64,3 +64,9 @@ Then use it inside template.
 Live demo is available at [https://ng-poland-map.web.app](https://ng-poland-map.web.app).
 
 You can view demo source here at [github](https://github.com/wnuczek/ng-poland-map/tree/master/projects/ng-poland-map-demo)
+
+## Changelog
+
+### v0.0.7
+
+- click events added to regions and pointers

@@ -6,7 +6,7 @@
   <g
     lib-ng-poland-map-region
     *ngFor="let region of regions"
-    [path]="region.path"
+    [region]="region"
     [highlightColor]="
       region.voivodeship ? regionFillColor(region.voivodeship) : undefined
     "
@@ -14,15 +14,18 @@
     [labelPosY]="region.labelPosY"
     [strokeColor]="strokeColor"
     [strokeWidth]="strokeWidth"
+		[clickable]="regionsClickable"
+    (clicked)="regionClick(region.voivodeship)"
   ></g>
 
   <g
     lib-ng-poland-map-pointer
     *ngFor="let city of highlightedCities"
-    [longitude]="city.longitude"
-    [latitude]="city.latitude"
+    [point]="city"
     [fill]="pointColor"
-		[pointSize]="pointSize"
-		[pointerTemplate]="pointerTemplate"
+    [pointSize]="pointSize"
+    [pointerTemplate]="pointerTemplate"
+		[clickable]="pointersClickable"
+    (clicked)="pointClick(city)"
   ></g>
 </svg>

@@ -1,12 +1,14 @@
 {
   "name": "ng-poland-map",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build ng-poland-map",
+    "build-demo": "ng build ng-poland-map-demo",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+		"publish": "ng build ng-poland-map && cd dist/ng-poland-map && npm publish"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +20,7 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
-    "ng-poland-map": "^0.0.4",
+    "ng-poland-map": "^0.0.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
