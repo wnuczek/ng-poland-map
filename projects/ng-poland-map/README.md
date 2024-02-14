@@ -70,3 +70,7 @@ You can view demo source here at [github](https://github.com/wnuczek/ng-poland-m
 ### v0.0.7
 
 - click events added to regions and pointers
+
+### v0.0.8
+
+- fixed peer dependencies versions
