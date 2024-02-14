@@ -38,6 +38,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^17.0.0",
     "ng-poland-map": "file:dist/ng-poland-map",
+    "prettier": "^3.2.5",
     "typescript": "~5.2.2"
   }
 }
