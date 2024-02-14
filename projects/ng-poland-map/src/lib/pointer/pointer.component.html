@@ -5,12 +5,14 @@
 </ng-container>
 
 <ng-template #defaultPointer let-point="point">
-  <svg:circle
-    [attr.cx]="longitudeToSvgX(point.longitude)"
-    [attr.cy]="latitudeToSvgY(point.latitude)"
-    [attr.r]="pointSize"
-    [attr.fill]="fill"
-    (click)="pointClicked(point)"
-    [attr.class]="clickable ? 'pointer clickable' : 'pointer'"
-  />
+  @if (longitudeToSvgX(point.longitude) && latitudeToSvgY(point.latitude)) {
+    <svg:circle
+      [attr.cx]="longitudeToSvgX(point.longitude)"
+      [attr.cy]="latitudeToSvgY(point.latitude)"
+      [attr.r]="pointSize"
+      [attr.fill]="fill"
+      (click)="pointClicked(point)"
+      [attr.class]="clickable ? 'pointer clickable' : 'pointer'"
+    />
+  }
 </ng-template>

@@ -43,21 +43,27 @@ export class NgPolandMapPointerComponent {
 
 	@Output() clicked: EventEmitter<NgPolandMapPoint> = new EventEmitter();
 
-	longitudeToSvgX(longitude: number) {
+	longitudeToSvgX(longitude: number): number | undefined {
+		if (longitude < eastLong || longitude > westLong) {
+			return undefined;
+		}
 		const x =
 			this.svgWidth *
 			Math.abs(Math.abs(longitude - this.eastLong) / this.eastToWest);
 		return x;
 	}
 
-	latitudeToSvgY(latitude: number) {
+	latitudeToSvgY(latitude: number): number | undefined {
+		if (latitude < southLat || latitude > northLat) {
+			return undefined;
+		}
 		const y =
 			this.svgHeight *
 			Math.abs(Math.abs(this.northLat - latitude) / this.southToNorth);
 		return y;
 	}
 
-	pointClicked(region: NgPolandMapPoint) {
-		this.clicked.next(region);
+	pointClicked(point: NgPolandMapPoint | undefined) {
+		if (this.clickable && point) this.clicked.next(point);
 	}
 }
