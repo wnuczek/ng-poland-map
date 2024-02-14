@@ -56,7 +56,31 @@ Then use it inside template.
   [highlightColor]="config.highlightColor" 
   [pointColor]="config.pointColor" 
   [pointSize]="config.pointSize" 
+  [regionsClickable]="config.regionsClickable" 
+  (regionClicked)="onRegionClicked($event)" 
+  [pointersClickable]="config.pointersClickable" 
+  (pointClicked)="onPointerClicked($event)" 
 ></ng-poland-map>
+```
+
+#### Click events
+
+Define event handling functions inside your component
+
+```typescript
+
+import { NgPolandMapPoint, NgPolandMapRegion } from "ng-poland-map";
+
+...
+
+onPointerClicked(point: NgPolandMapPoint) {
+  // implement your own logic here
+}
+
+onRegionClicked(region: NgPolandMapRegion["voivodeship"]) {
+  // implement your own logic here
+}
+
 ```
 
 ## Demo
@@ -74,3 +98,7 @@ You can view demo source here at [github](https://github.com/wnuczek/ng-poland-m
 ### v0.0.8
 
 - fixed peer dependencies versions
+
+### v0.0.9
+
+- readme updated with click events
