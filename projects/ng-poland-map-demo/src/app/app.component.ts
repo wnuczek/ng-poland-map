@@ -1,5 +1,10 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import {
+	ChangeDetectionStrategy,
+	Component,
+	effect,
+	signal,
+} from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterOutlet } from "@angular/router";
 
@@ -31,8 +36,8 @@ export class AppComponent {
 	voivodeships = regionList;
 	cities = cityList;
 
-	selectedVoivodeships: NgPolandMapRegion[] = [];
-	selectedCites: NgPolandMapPoint[] = [];
+	selectedRegions = signal<NgPolandMapRegion[]>([]);
+	selectedPoints = signal<NgPolandMapPoint[]>([]);
 
 	customLatitude: number | undefined = 52.1053;
 	customLongitude: number | undefined = 21.2616;
@@ -55,7 +60,8 @@ export class AppComponent {
 	onRegionSelectionChange($event: any) {
 		const options = $event.target.options;
 
-		this.selectedVoivodeships = [];
+		// clear selection
+		this.selectedRegions.set([]);
 
 		Array.from(options).map((option: any) => {
 			if (option.selected) {
@@ -63,7 +69,7 @@ export class AppComponent {
 				const selected = this.voivodeships.filter(
 					(v) => v.voivodeship == value,
 				)[0];
-				this.selectedVoivodeships.push(selected);
+				this.selectedRegions.update((regions) => [...regions, selected]);
 			}
 		});
 	}
@@ -71,13 +77,14 @@ export class AppComponent {
 	onCitySelectionChange($event: any) {
 		const options = $event.target.options;
 
-		this.selectedCites = [];
+		// clear selection
+		this.selectedPoints.set([]);
 
 		Array.from(options).map((option: any) => {
 			if (option.selected) {
 				const value = option.value;
 				const selected = this.cities.filter((v) => v.labelText == value)[0];
-				this.selectedCites.push(selected);
+				this.selectedPoints.update((points) => [...points, selected]);
 			}
 		});
 	}
@@ -90,7 +97,7 @@ export class AppComponent {
 				labelText: `Point ${this.cities.length + 1}`,
 			};
 			this.cities.push(newCity);
-			this.selectedCites.push(newCity);
+			this.selectedPoints.update((points) => [...points, newCity]);
 		}
 	}
 
