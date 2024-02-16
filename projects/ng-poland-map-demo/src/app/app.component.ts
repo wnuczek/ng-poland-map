@@ -57,6 +57,17 @@ export class AppComponent {
 	minLatitude = southLat;
 	maxLatitude = northLat;
 
+	constructor() {
+		effect(() => {
+			console.log("Effect triggered by signal change");
+			console.log(this.selectedRegions());
+		});
+		effect(() => {
+			console.log("Effect triggered by signal change");
+			console.log(this.selectedPoints());
+		});
+	}
+
 	onRegionSelectionChange($event: any) {
 		const options = $event.target.options;
 
