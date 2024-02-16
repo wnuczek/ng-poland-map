@@ -4,48 +4,30 @@ main
 	display: flex
 	flex-direction: column
 	gap: 20px
+	margin: 0 20px
 	justify-content: center
 	align-items: center
-	@media screen and (min-width: 768px)
-		flex-direction: row
-		height: 90vh
-		max-width: 1200px
-		margin: 0 auto
-	.forms-container
-		height: 100%
-		width: 100%
-		@media screen and (min-width: 768px)
-			width: 30%
-		
-	form
-		.form-row
-			display: flex
-			flex-direction: row
-			justify-content: space-between
-			align-items: center
-			width: 100%
+	max-width: 1200px
+	.row
+		display: grid
+		gap: 20px
+		grid-template-columns: 1
 
-		&.config-form
-			padding: 1rem
-			display: flex
-			flex-direction: column
-			flex-wrap: no-wrap 
-			align-items: flex-start
-			justify-content: center
-			gap: .5rem
-			.form-row
-				input[type="number"]
-					width: 50px
-		&.data-form
-			display: flex
-			flex-direction: column
-			// height: calc(100% - 2rem)
-			padding: 1rem
-			@media screen and (min-width: 768px)
-				// height: calc(50% - 2rem)
-			label
-				margin-bottom: .25rem
-			select
-				flex:1
+		::ng-deep
+			.info
+				grid-column: 1/-1
+			.code
+				border: 1px solid red
+				@media screen and (min-width: 768px)
+					grid-column: 1/2
+
+			.example
+				border: 1px solid blue
+				@media screen and (min-width: 768px)
+					grid-column: 2/2
+
+
+		
+
 	ng-poland-map
 		flex: 1

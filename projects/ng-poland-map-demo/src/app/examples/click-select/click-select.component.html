@@ -1,0 +1,16 @@
+<section class="info">
+	<h2>Click to select</h2>
+	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam eaque est unde a blanditiis. Vel, neque rerum rem accusamus ea laboriosam nulla tempora necessitatibus corporis delectus. Commodi quae adipisci voluptates.</p>
+</section>
+<section class="code">
+	@for (url of code | keyvalue; track url) {
+		<code [highlight]="url.value| codeFromUrl | async" [languages]="['typescript']"></code>
+	}
+</section>
+<section class="example">
+<ng-poland-map
+  [highlightedRegions]="selectedRegions()"
+  [regionsClickable]="true"
+  (regionClicked)="onRegionClicked($event)"
+></ng-poland-map>
+</section>
