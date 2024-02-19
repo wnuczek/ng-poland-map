@@ -1,6 +1,6 @@
 {
   "name": "ng-poland-map",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,8 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test ng-poland-map",
     "test-demo": "ng test ng-poland-map-demo",
-		"test-ci": "ng test ng-poland-map --browsers=ChromeHeadless --watch=false --code-coverage",
-		"test-ci-demo": "ng test ng-poland-map-demo --browsers=ChromeHeadless --watch=false --code-coverage",
+    "test-ci": "ng test ng-poland-map --browsers=ChromeHeadless --watch=false --code-coverage",
+    "test-ci-demo": "ng test ng-poland-map-demo --browsers=ChromeHeadless --watch=false --code-coverage",
     "publish": "ng build ng-poland-map && cd dist/ng-poland-map && npm publish"
   },
   "private": true,
@@ -23,7 +23,7 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
-    "ng-poland-map": "^0.0.9",
+    "ng-poland-map": "^0.0.11",
     "ngx-highlightjs": "^10.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
