@@ -28,7 +28,10 @@
 					"builder": "@angular-devkit/build-angular:karma",
 					"options": {
 						"tsConfig": "projects/ng-poland-map/tsconfig.spec.json",
-						"polyfills": ["zone.js", "zone.js/testing"]
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						]
 					}
 				}
 			},
@@ -48,7 +51,6 @@
 			"root": "projects/ng-poland-map-demo",
 			"sourceRoot": "projects/ng-poland-map-demo/src",
 			"prefix": "app",
-
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:application",
@@ -57,14 +59,19 @@
 						"outputPath": "dist/ng-poland-map-demo",
 						"index": "projects/ng-poland-map-demo/src/index.html",
 						"browser": "projects/ng-poland-map-demo/src/main.ts",
-						"polyfills": ["zone.js"],
+						"polyfills": [
+							"zone.js"
+						],
 						"tsConfig": "projects/ng-poland-map-demo/tsconfig.app.json",
 						"inlineStyleLanguage": "sass",
 						"assets": [
 							"projects/ng-poland-map-demo/src/favicon.ico",
 							"projects/ng-poland-map-demo/src/assets"
 						],
-						"styles": ["projects/ng-poland-map-demo/src/styles.sass"],
+						"styles": [
+							"projects/ng-poland-map-demo/src/styles.sass",
+							"./node_modules/highlight.js/styles/github.css"
+						],
 						"scripts": []
 					},
 					"configurations": {
@@ -112,14 +119,19 @@
 				"test": {
 					"builder": "@angular-devkit/build-angular:karma",
 					"options": {
-						"polyfills": ["zone.js", "zone.js/testing"],
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
 						"tsConfig": "projects/ng-poland-map-demo/tsconfig.spec.json",
 						"inlineStyleLanguage": "sass",
 						"assets": [
 							"projects/ng-poland-map-demo/src/favicon.ico",
 							"projects/ng-poland-map-demo/src/assets"
 						],
-						"styles": ["projects/ng-poland-map-demo/src/styles.sass"],
+						"styles": [
+							"projects/ng-poland-map-demo/src/styles.sass"
+						],
 						"scripts": []
 					}
 				}

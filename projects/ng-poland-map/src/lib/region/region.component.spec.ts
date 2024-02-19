@@ -28,7 +28,7 @@ describe("NgPolandMapRegionComponent", () => {
 		expect(component.bgColor).toEqual("#aaaaaa");
 		expect(component.strokeWidth).toEqual(2);
 		expect(component.strokeColor).toEqual("#dddddd");
-		expect(component.clickable).toEqual(true);
+		expect(component.clickable).toEqual(false);
 		expect(component.highlightColor).toEqual("#aaaaaa");
 		expect(component.labelText).toBeUndefined();
 		expect(component.labelColor).toEqual("#000000");
@@ -90,6 +90,7 @@ describe("NgPolandMapRegionComponent", () => {
 	// Clicking on region emits 'clicked' event with correct voivodeship
 	it("should emit 'clicked' event with correct voivodeship when region is clicked", () => {
 		const component = new NgPolandMapRegionComponent();
+		component.clickable = true;
 		const voivodeship = Voivodeship.dolnośląskie;
 		component.region = {
 			path: "path",
