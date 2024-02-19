@@ -32,7 +32,7 @@ export class ConfigOptionsComponent {
 	customLatitude: number | undefined = 52.1053;
 	customLongitude: number | undefined = 21.2616;
 
-	bgColor: string = defaultConfig.bgColor;
+	bgColor = "#ededed";
 	strokeColor: string = defaultConfig.strokeColor;
 	strokeWidth: number = defaultConfig.strokeWidth;
 	regionColor: string = defaultConfig.regionColor;

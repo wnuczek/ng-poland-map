@@ -1,16 +1,15 @@
 <section class="info">
-	<h2>Click to select</h2>
-	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam eaque est unde a blanditiis. Vel, neque rerum rem accusamus ea laboriosam nulla tempora necessitatibus corporis delectus. Commodi quae adipisci voluptates.</p>
+  <h2>Click to select</h2>
+  <p>
+    You can use Event Emitters connected to region and point click actions to
+    implement custom logic e.g. selecting regions.
+  </p>
 </section>
-<section class="code">
-	@for (url of code | keyvalue; track url) {
-		<code [highlight]="url.value| codeFromUrl | async" [languages]="['typescript']"></code>
-	}
-</section>
-<section class="example">
-<ng-poland-map
-  [highlightedRegions]="selectedRegions()"
-  [regionsClickable]="true"
-  (regionClicked)="onRegionClicked($event)"
-></ng-poland-map>
-</section>
+<div class="example-wrapper">
+  <section class="code limited-height">
+    <app-code-viewer [code]="code"></app-code-viewer>
+  </section>
+  <section class="example">
+    <app-click-select-map></app-click-select-map>
+  </section>
+</div>
