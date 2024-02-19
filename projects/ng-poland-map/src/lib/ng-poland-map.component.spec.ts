@@ -1,5 +1,12 @@
+import { TemplateRef } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { Voivodeship, cityList, defaultConfig, regionList } from "./config";
+import {
+	NgPolandMapRegion,
+	Voivodeship,
+	cityList,
+	defaultConfig,
+	regionList,
+} from "./config";
 import { NgPolandMapComponent } from "./ng-poland-map.component";
 
 describe("NgPolandMapComponent", () => {
@@ -112,9 +119,21 @@ describe("NgPolandMapComponent", () => {
 	// The component should allow highlighting of specific regions and cities.
 	it("should allow highlighting of specific regions and cities", () => {
 		const ngPolandMap = new NgPolandMapComponent();
-		const highlightedRegions = [
-			{ voivodeship: Voivodeship.mazowieckie },
-			{ voivodeship: Voivodeship.lubelskie },
+		const highlightedRegions: NgPolandMapRegion[] = [
+			{
+				voivodeship: Voivodeship.mazowieckie,
+				path: "",
+				labelPosX: 0,
+				labelPosY: 0,
+				labelText: "Mazowieckie",
+			},
+			{
+				voivodeship: Voivodeship.lubelskie,
+				path: "",
+				labelPosX: 0,
+				labelPosY: 0,
+				labelText: "Lubelskie",
+			},
 		];
 		const highlightedCities = [
 			{ labelText: "Warszawa", latitude: 52.237049, longitude: 21.017532 },
@@ -143,7 +162,7 @@ describe("NgPolandMapComponent", () => {
 		ngPolandMap.regionsClickable = false;
 		ngPolandMap.pointersClickable = false;
 
-		const region = { voivodeship: Voivodeship.mazowieckie };
+		const region = Voivodeship.mazowieckie;
 		const point = {
 			labelText: "Warszawa",
 			latitude: 52.237049,
@@ -166,7 +185,7 @@ describe("NgPolandMapComponent", () => {
 		ngPolandMap.highlightedRegions = undefined;
 		ngPolandMap.highlightedCities = undefined;
 
-		const region = { voivodeship: Voivodeship.mazowieckie };
+		const region = Voivodeship.mazowieckie;
 		const point = {
 			labelText: "Warszawa",
 			latitude: 52.237049,
@@ -218,9 +237,21 @@ describe("NgPolandMapComponent", () => {
 	// The component should allow highlighting of specific regions and cities.
 	it("should allow highlighting of specific regions and cities", () => {
 		const ngPolandMap = new NgPolandMapComponent();
-		const highlightedRegions = [
-			{ voivodeship: Voivodeship.mazowieckie },
-			{ voivodeship: Voivodeship.lubelskie },
+		const highlightedRegions: NgPolandMapRegion[] = [
+			{
+				voivodeship: Voivodeship.mazowieckie,
+				path: "",
+				labelPosX: 0,
+				labelPosY: 0,
+				labelText: "Mazowieckie",
+			},
+			{
+				voivodeship: Voivodeship.lubelskie,
+				path: "",
+				labelPosX: 0,
+				labelPosY: 0,
+				labelText: "Lubelskie",
+			},
 		];
 		const highlightedCities = [
 			{ labelText: "Warszawa", latitude: 52.237049, longitude: 21.017532 },
@@ -249,7 +280,7 @@ describe("NgPolandMapComponent", () => {
 		ngPolandMap.regionsClickable = false;
 		ngPolandMap.pointersClickable = false;
 
-		const region = { voivodeship: Voivodeship.mazowieckie };
+		const region = Voivodeship.mazowieckie;
 		const point = {
 			labelText: "Warszawa",
 			latitude: 52.237049,
@@ -272,7 +303,7 @@ describe("NgPolandMapComponent", () => {
 		ngPolandMap.highlightedRegions = undefined;
 		ngPolandMap.highlightedCities = undefined;
 
-		const region = { voivodeship: Voivodeship.mazowieckie };
+		const region = Voivodeship.mazowieckie;
 		const point = {
 			labelText: "Warszawa",
 			latitude: 52.237049,
@@ -292,7 +323,7 @@ describe("NgPolandMapComponent", () => {
 	// The component should emit events when a region or city is clicked.
 	it("should emit regionClicked event when a region is clicked", () => {
 		const ngPolandMap = new NgPolandMapComponent();
-		const region = { voivodeship: "Mazowieckie" };
+		const region = Voivodeship.mazowieckie;
 		spyOn(ngPolandMap.regionClicked, "next");
 
 		ngPolandMap.regionClick(region);
@@ -313,7 +344,7 @@ describe("NgPolandMapComponent", () => {
 	// The component should handle clicks on regions and cities that are not in the regions and cities lists.
 	it("should not emit regionClicked event when a region is clicked and regionsClickable is false", () => {
 		const ngPolandMap = new NgPolandMapComponent();
-		const region = { voivodeship: "Mazowieckie" };
+		const region = Voivodeship.mazowieckie;
 		spyOn(ngPolandMap.regionClicked, "next");
 		ngPolandMap.regionsClickable = false;
 
