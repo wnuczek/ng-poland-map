@@ -21,8 +21,8 @@ export const defaultConfig = {
 	highlightColor: "#9fc874",
 	pointColor: "#f93324",
 	pointSize: 10,
-	regionsClickable: true,
-	pointersClickable: true,
+	regionsClickable: false,
+	pointersClickable: false,
 };
 
 export const northLat = 54.833333;
