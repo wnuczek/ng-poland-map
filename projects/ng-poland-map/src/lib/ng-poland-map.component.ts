@@ -50,12 +50,10 @@ export class NgPolandMapComponent {
 	@Input() highlightedCities: NgPolandMapPoint[] | undefined;
 
 	// custom templates
-	@Input() pointerTemplate: TemplateRef<any> | undefined;
+	@Input() pointerTemplate: TemplateRef<Element> | undefined;
 
 	@Output() regionClicked: EventEmitter<Voivodeship> = new EventEmitter();
 	@Output() pointClicked: EventEmitter<NgPolandMapPoint> = new EventEmitter();
-
-	constructor() {}
 
 	ngOnInit(): void {}
 

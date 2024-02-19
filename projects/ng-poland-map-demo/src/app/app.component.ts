@@ -57,11 +57,13 @@ export class AppComponent {
 
 		this.selectedVoivodeships = [];
 
+		if (!options) return;
+
 		Array.from(options).map((option: any) => {
 			if (option.selected) {
 				const value = option.value as Voivodeship;
 				const selected = this.voivodeships.filter(
-					(v) => v.voivodeship == value,
+					(v) => v.voivodeship === value,
 				)[0];
 				this.selectedVoivodeships.push(selected);
 			}
@@ -76,7 +78,7 @@ export class AppComponent {
 		Array.from(options).map((option: any) => {
 			if (option.selected) {
 				const value = option.value;
-				const selected = this.cities.filter((v) => v.labelText == value)[0];
+				const selected = this.cities.filter((v) => v.labelText === value)[0];
 				this.selectedCites.push(selected);
 			}
 		});

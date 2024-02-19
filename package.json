@@ -1,13 +1,16 @@
 {
   "name": "ng-poland-map",
-  "version": "0.0.10",
+  "version": "0.0.9",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build ng-poland-map",
     "build-demo": "ng build ng-poland-map-demo",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test ng-poland-map",
+    "test-demo": "ng test ng-poland-map-demo",
+		"test-ci": "ng test ng-poland-map --browsers=ChromeHeadless --watch=false --code-coverage",
+		"test-ci-demo": "ng test ng-poland-map-demo --browsers=ChromeHeadless --watch=false --code-coverage",
     "publish": "ng build ng-poland-map && cd dist/ng-poland-map && npm publish"
   },
   "private": true,
@@ -20,7 +23,7 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
-    "ng-poland-map": "^0.0.10",
+    "ng-poland-map": "^0.0.9",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
@@ -37,6 +40,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^17.0.0",
+    "prettier": "^3.2.5",
     "typescript": "~5.2.2"
   }
 }
