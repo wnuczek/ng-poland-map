@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ClickSelectComponent } from './click-select.component';
+import { HttpClientModule } from "@angular/common/http";
+import { ClickSelectComponent } from "./click-select.component";
 
-describe('ClickSelectComponent', () => {
-  let component: ClickSelectComponent;
-  let fixture: ComponentFixture<ClickSelectComponent>;
+describe("ClickSelectComponent", () => {
+	let component: ClickSelectComponent;
+	let fixture: ComponentFixture<ClickSelectComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ClickSelectComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(ClickSelectComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [ClickSelectComponent, HttpClientModule],
+		}).compileComponents();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+		fixture = TestBed.createComponent(ClickSelectComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
+
+	it("should create", () => {
+		expect(component).toBeTruthy();
+	});
 });
