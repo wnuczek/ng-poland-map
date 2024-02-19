@@ -16,7 +16,7 @@ import { NgPolandMapRegion, Voivodeship, defaultConfig } from "../config";
 	schemas: [NO_ERRORS_SCHEMA],
 })
 export class NgPolandMapRegionComponent {
-	@Input() region!: NgPolandMapRegion;
+	@Input() region: NgPolandMapRegion | undefined;
 	@Input() bgColor: string = defaultConfig.regionColor;
 	@Input() strokeWidth: number = defaultConfig.strokeWidth;
 	@Input() strokeColor: string = defaultConfig.strokeColor;

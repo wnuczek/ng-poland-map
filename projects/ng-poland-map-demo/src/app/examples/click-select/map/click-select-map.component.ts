@@ -36,7 +36,6 @@ export class ClickSelectMapComponent {
 			} else {
 				regions.splice(voivodeshipNames.indexOf(regionClicked), 1);
 			}
-			console.log(regions);
 			return [...regions];
 		});
 	}
