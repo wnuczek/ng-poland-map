@@ -1,15 +1,17 @@
-<svg:path
-  [attr.d]="region.path"
-  [attr.fill]="highlightColor"
-  [attr.stroke]="strokeColor"
-  [attr.stroke-width]="strokeWidth"
-  (click)="regionClicked(region.voivodeship)"
-  [attr.class]="clickable ? 'region-path clickable' : 'region-path'"
-></svg:path>
-<svg:text
-  [attr.x]="region.labelPosX"
-  [attr.y]="region.labelPosY"
-  [attr.fill]="labelColor"
->
-  {{ labelText }}
-</svg:text>
+@if (region) {
+  <svg:path
+    [attr.d]="region.path"
+    [attr.fill]="highlightColor"
+    [attr.stroke]="strokeColor"
+    [attr.stroke-width]="strokeWidth"
+    (click)="regionClicked(region.voivodeship)"
+    [attr.class]="clickable ? 'region-path clickable' : 'region-path'"
+  ></svg:path>
+  <svg:text
+    [attr.x]="region.labelPosX"
+    [attr.y]="region.labelPosY"
+    [attr.fill]="labelColor"
+  >
+    {{ labelText }}
+  </svg:text>
+}

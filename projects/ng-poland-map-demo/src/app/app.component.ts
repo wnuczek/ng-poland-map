@@ -74,11 +74,13 @@ export class AppComponent {
 		// clear selection
 		this.selectedRegions.set([]);
 
+		if (!options) return;
+
 		Array.from(options).map((option: any) => {
 			if (option.selected) {
 				const value = option.value as Voivodeship;
 				const selected = this.voivodeships.filter(
-					(v) => v.voivodeship == value,
+					(v) => v.voivodeship === value,
 				)[0];
 				this.selectedRegions.update((regions) => [...regions, selected]);
 			}
@@ -94,7 +96,7 @@ export class AppComponent {
 		Array.from(options).map((option: any) => {
 			if (option.selected) {
 				const value = option.value;
-				const selected = this.cities.filter((v) => v.labelText == value)[0];
+				const selected = this.cities.filter((v) => v.labelText === value)[0];
 				this.selectedPoints.update((points) => [...points, selected]);
 			}
 		});
