@@ -56,6 +56,7 @@ describe("NgPolandMapComponent", () => {
 	it("should emit a Voivodeship event when clicking on a region", () => {
 		const ngPolandMap = new NgPolandMapComponent();
 		const region = Voivodeship.mazowieckie;
+		ngPolandMap.regionsClickable = true;
 		spyOn(ngPolandMap.regionClicked, "next");
 		ngPolandMap.regionClick(region);
 		expect(ngPolandMap.regionClicked.next).toHaveBeenCalledWith(region);
@@ -184,6 +185,8 @@ describe("NgPolandMapComponent", () => {
 		const ngPolandMap = new NgPolandMapComponent();
 		ngPolandMap.highlightedRegions = undefined;
 		ngPolandMap.highlightedCities = undefined;
+		ngPolandMap.regionsClickable = true;
+		ngPolandMap.pointersClickable = true;
 
 		const region = Voivodeship.mazowieckie;
 		const point = {
@@ -302,6 +305,8 @@ describe("NgPolandMapComponent", () => {
 		const ngPolandMap = new NgPolandMapComponent();
 		ngPolandMap.highlightedRegions = undefined;
 		ngPolandMap.highlightedCities = undefined;
+		ngPolandMap.regionsClickable = true;
+		ngPolandMap.pointersClickable = true;
 
 		const region = Voivodeship.mazowieckie;
 		const point = {
@@ -324,6 +329,7 @@ describe("NgPolandMapComponent", () => {
 	it("should emit regionClicked event when a region is clicked", () => {
 		const ngPolandMap = new NgPolandMapComponent();
 		const region = Voivodeship.mazowieckie;
+		ngPolandMap.regionsClickable = true;
 		spyOn(ngPolandMap.regionClicked, "next");
 
 		ngPolandMap.regionClick(region);
