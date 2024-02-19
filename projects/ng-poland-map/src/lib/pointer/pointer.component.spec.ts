@@ -32,6 +32,7 @@ describe("NgPolandMapRegionComponent", () => {
 	// Should correctly emit a clicked event when point is clicked
 	it("should emit a clicked event when point is clicked", () => {
 		const component = new NgPolandMapPointerComponent();
+		component.clickable = true;
 		const point: NgPolandMapPoint = {
 			latitude: 52.2297,
 			longitude: 21.0122,
